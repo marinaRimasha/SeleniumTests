@@ -1,0 +1,378 @@
+{
+  "id": "d84e2bf1-ee6e-4f28-9cc4-3362dde27f23",
+  "version": "2.0",
+  "name": "TestingSchool2020",
+  "url": "https://www.1a.lv/",
+  "tests": [{
+    "id": "23c163ff-3d21-4d0a-bbf9-789645cd1368",
+    "name": "testOpenCTCOPage",
+    "commands": [{
+      "id": "93f8459b-d002-4ca9-883b-b8dae0deeef7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7b92c0d2-4db9-4934-a198-ef20c135d287",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "984x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1631acfb-045c-45fa-9755-897a6a46b45a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Ок",
+      "targets": [
+        ["linkText=Ок", "linkText"],
+        ["css=.ok", "css:finder"],
+        ["xpath=//a[contains(text(),'Ок')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'javascript:void(0);')]", "xpath:href"],
+        ["xpath=//p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Ок')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a542ffe9-38d0-4177-9ebd-f1724958f7c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.navbar-brand > img",
+      "targets": [
+        ["css=.navbar-brand > img", "css:finder"],
+        ["xpath=//img[@alt='ctco icon']", "xpath:img"],
+        ["xpath=//img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b27d8c5-26a6-4511-a042-bc41d027bc89",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "css=.navbar-brand > img",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "88774868-deb2-4ac8-9f35-9b0cbab5b0af",
+    "name": "testEngineerSkills",
+    "commands": [{
+      "id": "65db5614-130a-4b09-872d-dc587d6ea7a4",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "822cca6f-de5b-4b28-8d5e-0b86e513d304",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1108x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f6533b57-7b15-44f3-824a-2031dc8bb05f",
+      "comment": "Wait for \"All vacancies\" button to appear",
+      "command": "waitForElementPresent",
+      "target": "css=.col-sm-9 > .text-block .button-bg",
+      "targets": [
+        ["css=.col-sm-9 > .text-block .button-bg", "css:finder"],
+        ["xpath=//div[3]/div/div/div/a[6]/span[2]", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c722e5cb-9b91-408d-8a65-de05f3bc68b7",
+      "comment": "Click on \"All vacancies\" ",
+      "command": "click",
+      "target": "css=.col-sm-9 > .text-block .button-bg",
+      "targets": [
+        ["css=.col-sm-9 > .text-block .button-bg", "css:finder"],
+        ["xpath=//div[3]/div/div/div/a[6]/span[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "95f7ded9-7225-4557-b470-f0a9336ed081",
+      "comment": "Wait for \"Test Automation Engineer\" vacancy to be in list",
+      "command": "waitForElementPresent",
+      "target": "linkText=Test Automation Engineer",
+      "targets": [
+        ["linkText=Test Automation Engineer", "linkText"],
+        ["css=#menu-item-3249 > .menu-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Test Automation Engineer')]", "xpath:link"],
+        ["xpath=//li[@id='menu-item-3249']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://ctco.lv/careers/vacancies/test-automation-engineer-2/')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test Automation Engineer')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "7322902c-786c-4411-b59c-5a85a658ceeb",
+      "comment": "Click the Automation Engineer vacancy",
+      "command": "click",
+      "target": "linkText=Test Automation Engineer",
+      "targets": [
+        ["linkText=Test Automation Engineer", "linkText"],
+        ["css=#menu-item-3249 > .menu-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Test Automation Engineer')]", "xpath:link"],
+        ["xpath=//li[@id='menu-item-3249']/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://ctco.lv/careers/vacancies/test-automation-engineer-2/')]", "xpath:href"],
+        ["xpath=//li[9]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Test Automation Engineer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "16a2a838-7549-4025-bc35-edc9373649f9",
+      "comment": "wait for vacancy skills to be visible",
+      "command": "waitForElementVisible",
+      "target": "css=.animated > .text-block p:nth-child(3)",
+      "targets": [
+        ["css=.animated > .text-block p:nth-child(3)", "css:finder"],
+        ["xpath=//div[14]/div/div/p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Experience in web application testing;\nExperience with automated testing tools and frameworks (for example: Selenium, REST Assured);\nUnderstanding of testing principles, practices and processes, good knowledge of SDLC;\nTeam player with good analytical and communication skills;\nGood level in English reading /speaking /writing, and good understanding of Latvian and Russian.')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1414cc39-13d5-431a-947e-726ad33d32c4",
+      "comment": "verify text about skills is present",
+      "command": "verifyText",
+      "target": "css=.animated > .text-block p:nth-child(3)",
+      "targets": [
+        ["css=.animated > .text-block p:nth-child(3)", "css:finder"],
+        ["xpath=//div[14]/div/div/p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Experience in web application testing;\nExperience with automated testing tools and frameworks (for example: Selenium, REST Assured);\nUnderstanding of testing principles, practices and processes, good knowledge of SDLC;\nTeam player with good analytical and communication skills;\nGood level in English reading /speaking /writing, and good understanding of Latvian and Russian.')]", "xpath:innerText"]
+      ],
+      "value": "Experience in web application testing;\\nExperience with automated testing tools and frameworks (for example: Selenium, REST Assured);\\nUnderstanding of testing principles, practices and processes, good knowledge of SDLC;\\nTeam player with good analytical and communication skills;\\nGood level in English reading /speaking /writing, and good understanding of Latvian and Russian."
+    }, {
+      "id": "3709bb2b-34e4-44ff-822a-a84988581b68",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.animated > .text-block p:nth-child(3)",
+      "targets": [
+        ["css=.animated > .text-block p:nth-child(3)", "css:finder"],
+        ["xpath=//div[14]/div/div/p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Experience in web application testing;\nExperience with automated testing tools and frameworks (for example: Selenium, REST Assured);\nUnderstanding of testing principles, practices and processes, good knowledge of SDLC;\nTeam player with good analytical and communication skills;\nGood level in English reading /speaking /writing, and good understanding of Latvian and Russian.')]", "xpath:innerText"]
+      ],
+      "value": "Experience in web application testing;\\nExperience with automated testing tools and frameworks (for example: Selenium, REST Assured);\\nUnderstanding of testing principles, practices and processes, good knowledge of SDLC;\\nTeam player with good analytical and communication skills;\\nGood level in English reading /speaking /writing, and good understanding of Latvian and Russian."
+    }]
+  }, {
+    "id": "d840f625-5865-4b46-94f6-a90a4fd952cd",
+    "name": "teapotPurchase1a",
+    "commands": [{
+      "id": "a97f416b-07e3-4a27-8d22-9aa424223e24",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.1a.lv/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0597dedb-9628-41d8-9e64-39d347180778",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "953x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ae7c1d25-ba78-4f55-9285-2177eeaff3c6",
+      "comment": "Wait for search inout field to be present on page",
+      "command": "waitForElementPresent",
+      "target": "id=search_products_text_field",
+      "targets": [
+        ["id=search_products_text_field", "id"],
+        ["name=search_text", "name"],
+        ["css=#search_products_text_field", "css:finder"],
+        ["xpath=//input[@id='search_products_text_field']", "xpath:attributes"],
+        ["xpath=//form[@id='autocomplete_form']/div/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4fd8e2ef-5aa2-4aeb-9c0e-2888c89a48ec",
+      "comment": "assert if banner present",
+      "command": "//assertElementPresent",
+      "target": "css=.floating-element:nth-child(1)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "079ea220-523b-48b1-8f36-429eb672cb2c",
+      "comment": "close banner if it exists",
+      "command": "//click",
+      "target": "css=.close-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f50a1da-faeb-46a7-bcab-0d4033981eac",
+      "comment": "click into the Search field",
+      "command": "click",
+      "target": "id=search_products_text_field",
+      "targets": [
+        ["id=search_products_text_field", "id"],
+        ["name=search_text", "name"],
+        ["css=#search_products_text_field", "css:finder"],
+        ["xpath=//input[@id='search_products_text_field']", "xpath:attributes"],
+        ["xpath=//form[@id='autocomplete_form']/div/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4220022c-c809-4b56-b30e-10c17030ad96",
+      "comment": "",
+      "command": "type",
+      "target": "id=search_products_text_field",
+      "targets": [
+        ["id=search_products_text_field", "id"],
+        ["name=search_text", "name"],
+        ["css=#search_products_text_field", "css:finder"],
+        ["xpath=//input[@id='search_products_text_field']", "xpath:attributes"],
+        ["xpath=//form[@id='autocomplete_form']/div/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "tējkanna"
+    }, {
+      "id": "ef72a34d-7206-4452-8ca2-2ba51f9b57e0",
+      "comment": "type Tējkanna into the search field",
+      "command": "type",
+      "target": "id=search_products_text_field",
+      "targets": [
+        ["id=search_products_text_field", "id"],
+        ["name=search_text", "name"],
+        ["css=#search_products_text_field", "css:finder"],
+        ["xpath=//input[@id='search_products_text_field']", "xpath:attributes"],
+        ["xpath=//form[@id='autocomplete_form']/div/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "Tējkanna"
+    }, {
+      "id": "8a5a9689-521a-4349-9317-6b4b8b468db1",
+      "comment": "Click search (magnifier icon) button",
+      "command": "click",
+      "target": "css=.search-inner > input:nth-child(9)",
+      "targets": [
+        ["css=.search-inner > input:nth-child(9)", "css:finder"],
+        ["xpath=//input[@value='search']", "xpath:attributes"],
+        ["xpath=//form[@id='autocomplete_form']/div/input[7]", "xpath:idRelative"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbe7b358-8019-4ac9-a970-266433013f5a",
+      "comment": "wait for \" elektriskas tejkannas\" category displayed",
+      "command": "waitForElementPresent",
+      "target": "css=#search-category-image-grid > .ait-search-result-image-box:nth-child(1) > .ait-search-result-title",
+      "targets": [
+        ["css=#search-category-image-grid > .ait-search-result-image-box:nth-child(1) > .ait-search-result-title", "css:finder"],
+        ["xpath=//div[@id='search-category-image-grid']/a/strong", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/div/div[2]/div[2]/a/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Tējkannas (elektriskās)')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0d6cb291-51be-488b-8813-b81b02fb50c3",
+      "comment": "click \"elektriskas tejkannas: category",
+      "command": "click",
+      "target": "css=#search-category-image-grid > .ait-search-result-image-box:nth-child(1) > .ait-search-result-title",
+      "targets": [
+        ["css=#search-category-image-grid > .ait-search-result-image-box:nth-child(1) > .ait-search-result-title", "css:finder"],
+        ["xpath=//div[@id='search-category-image-grid']/a/strong", "xpath:idRelative"],
+        ["xpath=//div[6]/div/div/div/div[2]/div[2]/a/strong", "xpath:position"],
+        ["xpath=//strong[contains(.,'Tējkannas (elektriskās)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "842e453d-530f-42cd-924f-12ac623e1b22",
+      "comment": "wait for \"1 - 48 no ... \" count displayed ",
+      "command": "assertElementPresent",
+      "target": "css=.paging-holder:nth-child(20) .showing",
+      "targets": [
+        ["css=.paging-holder:nth-child(20) .showing", "css:finder"],
+        ["xpath=//div[@id='product_search_result_grid_container']/div[3]/div/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div[3]/div[3]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0cfc805-2ad9-470b-b567-adb4b0b7bd1e",
+      "comment": "click \"ielikt groza\"",
+      "command": "click",
+      "target": "css=.product:nth-child(1) .button",
+      "targets": [
+        ["css=.product:nth-child(1) .button", "css:finder"],
+        ["xpath=//div[@id='product_search_result_grid_container']/div[4]/section/div/div/div/div[3]/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/order/shopping_cart')])[2]", "xpath:href"],
+        ["xpath=//section/div/div/div/div[3]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a46b7dd3-73b2-4cc2-991d-c538fc042e4b",
+      "comment": "click \"uz grozu\"",
+      "command": "//click",
+      "target": "css=.product-is-in-cart > span",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c430dfe-8a56-427c-9cb1-87b5d4062008",
+      "comment": "wait for \"mans pirkumu grozs\" to be visible",
+      "command": "waitForElementVisible",
+      "target": "css=h1",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//div[@id='main']/div/div/form/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Mans pirkumu grozs')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a249a24f-d318-49ea-a21d-67db1c226785",
+      "comment": "set mouse on to cart",
+      "command": "mouseOver",
+      "target": "css=.items",
+      "targets": [
+        ["css=.items", "css:finder"],
+        ["xpath=//div[@id='shopping_cart_container']/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfa5dd6b-4b21-4649-83a4-d5a0ec03b28e",
+      "comment": "assert there is no 2nd item in cart",
+      "command": "assertElementNotPresent",
+      "target": "css=.cartdrop li:nth-child(2)",
+      "targets": [
+        ["css=.cartdrop li:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='shopping_cart_container']/div/ul/li[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/div/ul/li[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4739ba0d-7103-40e5-81d8-d73a0ffa078d",
+      "comment": "mouse over cart",
+      "command": "//mouseOver",
+      "target": "css=.items",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1f305ff8-7305-4a22-a95d-a1e0c9e2c575",
+      "comment": "assert cart is empty",
+      "command": "//assertElementPresent",
+      "target": "css=.empty",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f654a42-5e5f-4f2f-a821-225da9c6df15",
+      "comment": "click remove item until cart empty",
+      "command": "//click",
+      "target": "linkText=×",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "070469cd-1639-431c-9b28-7d9c45a12758",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["23c163ff-3d21-4d0a-bbf9-789645cd1368"]
+  }],
+  "urls": ["https://www.ctco.lv/", "https://ctco.lv/", "https://www.1a.lv/"],
+  "plugins": []
+}
