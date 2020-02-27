@@ -16,19 +16,19 @@ import java.util.List;
 public class teapotToCartTest {
     private WebDriver driver;
 
-
     @Before
     public void setUp() {
         System.setProperty("webdriver.gecko.driver", "/Users/marina.rimasha/IdeaProjects/geckodriver");
         driver = new FirefoxDriver();
+
         driver.get("https://www.1a.lv/");
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.id("search_products_text_field")));
 
-        List<WebElement> banner = driver.findElements(By.cssSelector(".floating-element:nth-child(1)"));
-        if (banner.size() > 0); {
-            driver.findElement(By.cssSelector(".close-button")).click();
-        }
+//        List<WebElement> banner = driver.findElements(By.cssSelector(".floating-element:nth-child(1)"));
+//        if (banner.size() > 0); {
+//            driver.findElement(By.cssSelector(".close-button")).click();
+//        }
 
         //mouse over cart
         WebElement element = driver.findElement(By.cssSelector(".items"));
@@ -65,9 +65,9 @@ public class teapotToCartTest {
         driver.findElement(By.cssSelector(".search-inner > input:nth-child(9)")).click();
         List<WebElement> banner = driver.findElements(By.cssSelector(".floating-element:nth-child(1)"));
 
-        if (banner.size() > 0); {
-            driver.findElement(By.cssSelector(".close-button")).click();
-        }
+//        if (banner.size() > 0); {
+//            driver.findElement(By.cssSelector(".close-button")).click();
+//        }
 
         // 11 | click | css=#search-category-image-grid > .ait-search-result-image-box:nth-child(1) > .ait-search-result-title |  | click "elektriskas tejkannas: category
         driver.findElement(By.cssSelector("#search-category-image-grid > .ait-search-result-image-box:nth-child(1) > .ait-search-result-title")).click();

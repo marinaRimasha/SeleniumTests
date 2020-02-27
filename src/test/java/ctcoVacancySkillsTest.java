@@ -4,7 +4,9 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -14,6 +16,11 @@ import static org.junit.Assert.assertThat;
 public class ctcoVacancySkillsTest {
 
     private WebDriver driver;
+
+    static final By careersTabXPATH= By.xpath("//a[contains(@href, 'https://ctco.lv/careers/')]");
+    static final By vacanciesXPATH = By.xpath("//a[@href='https://ctco.lv/careers/vacancies/']");
+    static final By testAutomationEngineerXPATH = By.xpath("//a[text()='Test Automation Engineer']");
+    static final By skillsText = By.xpath("//h1[text()='Test Automation Engineer']/following-sibling::div/p[3]");
 
     @Before
     public void setUp() {
@@ -25,6 +32,40 @@ public class ctcoVacancySkillsTest {
     public void tearDown()
     {
         driver.quit(); //can comment for some debug actions
+    }
+
+
+
+    @Test
+    public void testEngineerSkillsWithLocators() {
+
+        Actions builder = new Actions(driver);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+
+        driver.get("https://ctco.lv/");
+        driver.manage().window().setSize(new Dimension(1200, 920));
+
+        WebElement careersButton = driver.findElement(careersTabXPATH);
+        careersButton.isDisplayed(); //wait for Carreers tab top be displayed
+        builder.moveToElement(careersButton).perform(); //move to it
+
+
+        WebElement vacanciesButton = driver.findElement(vacanciesXPATH);
+        vacanciesButton.isDisplayed();
+        builder.moveToElement(vacanciesButton).perform();
+        vacanciesButton.click();
+
+        WebElement testEngineerButton = driver.findElement(testAutomationEngineerXPATH);
+        wait.until(ExpectedConditions.visibilityOf(testEngineerButton));
+        testEngineerButton.click();
+
+        WebElement requiredSkills = driver.findElement(skillsText);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(skillsText));
+
+        assertThat(requiredSkills.getText(), containsString("Good level in English reading /speaking /writing"));
+        assertThat(requiredSkills.getText(), containsString("Team player with good analytical and communication skills"));
+        assertThat(requiredSkills.getText(), containsString("Experience with automated testing tools and frameworks"));
+
     }
 
 /*   -- TEST DESIGN --
@@ -73,5 +114,6 @@ public class ctcoVacancySkillsTest {
         assertThat(driver.findElement(By.cssSelector(".animated > .text-block p:nth-child(3)")).getText(), containsString("Experience with automated testing tools and frameworks"));
         assertThat(driver.findElement(By.cssSelector(".animated > .text-block p:nth-child(3)")).getText(), containsString("communication skills"));
     }
+
 }
 
